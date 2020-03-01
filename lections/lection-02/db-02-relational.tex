@@ -70,6 +70,19 @@
 таблица с зафиксированным типом данных для каждой колонки. 
 \end{block}
 Реляционные СУБД предлагают своим пользователям оперировать не определениями реляционной алгебры, а их адаптированными аналогами (таблицы, строки, столбцы и т. п.).
+\begin{center}
+\includegraphics[scale=0.35]{images/rel-03.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Свойства отношения}
+\begin{block}{Схема отношения}
+перечень атрибутов данного отношения с указанием домена, к которому они относятся. 
+\[ S_{R} = (A_{1},A_{2},A_{3},..,A_{n}), A_{i} \subset D_{i} \]
+\end{block}
+\begin{block}{Экземпляр отношения}
+отражает состояние данного объекта в текущий момент времени. 
+\end{block}
 \begin{block}{Свойства отношения}
 \begin{itemize}
 \item в таблице нет двух одинаковых строк;
@@ -80,23 +93,87 @@
 \end{block}
 \end{frame}
 
-\begin{frame}{Определение}
-\begin{block}{Отношение}
-является динамической моделью некоторого объекта реального мира. 
+\begin{frame}{Первичный ключ отношения}
+\begin{center}
+\includegraphics[scale=0.75]{images/rel-04.png}
+\end{center}
+\end{frame}
+\begin{frame}{Первичный ключ отношения}
+\begin{center}
+\includegraphics[scale=0.75]{images/rel-05.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Внешний ключ отношения}
+\begin{center}
+\includegraphics[scale=0.50]{images/rel-06.png}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.50]{images/rel-07.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Реляционная алгебра}
+\begin{center}
+\includegraphics[scale=0.40]{images/ra-01.png}
+\end{center}
+\begin{block}{Проекция отношения R на X}
+называют новое отношение $R[X]= {r[X]|r \in R}$
 \end{block}
 \begin{center}
-\includegraphics[scale=0.35]{images/rel-02.png}
+\includegraphics[scale=0.50]{images/ra-02.png}
 \end{center}
-\begin{block}{Схема отношения}
-перечень атрибутов данного отношения с указанием домена, к которому они относятся. 
-\[ S_{R} = (A_{1},A_{2},A_{3},..,A_{n}), A_{i} \subset D_{i} \]
+\end{frame}
+
+\begin{frame}{Реляционная алгебра}
+\begin{center}
+\includegraphics[scale=0.40]{images/ra-01.png}
+\end{center}
+\begin{block}{Выборкой из отношения R по условию $\Theta$ для множества атрибутов X}
+называют новое отношение $R[\Theta(X)]= {r[X]|r \in R\wedge\Theta(r[X])}$
 \end{block}
-\begin{block}{Экземпляр отношения}
-отражает состояние данного объекта в текущий момент времени. 
+\begin{center}
+\includegraphics[scale=0.50]{images/ra-03.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Реляционная алгебра}
+\begin{block}{Соединением отношения R с отношением S по условию X=Y}
+называют новое отношение $R[X=Y]S = {<r,s>|r\in R\wedge s\in S\wedge(r[X]=s[Y])}$
+\end{block}
+\begin{center}
+\includegraphics[scale=0.50]{images/ra-04.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Реляционная алгебра}
+\begin{block}{Объединением отношения R с отношением S}
+называют новое отношение, объединяющее кортежи, содержащиеся в отношениях R и S.
+\end{block}
+\begin{center}
+\includegraphics[scale=0.50]{images/ra-05.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Реляционная алгебра}
+\begin{block}{Пересечением отношения R с отношением S}
+называют новое отношение, состоящее из общих кортежей $R\cap S = {x|x\in R \wedge x\in S}$
+\end{block}
+\begin{block}{Разностью отношения R с отношением S}
+называют новое отношение, состоящее кортежей R, не являющиеся кортежами S: $R\cap S = {x|x\in R \wedge x\notin S}$
 \end{block}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Реляционная алгебра}
+\begin{block}{Произведением отношения R с отношением S}
+называют новое отношение $R\otimes S = {<r,s>|r\in R\wedge s\in S}$
+\end{block}
+\begin{center}
+\includegraphics[scale=0.50]{images/ra-06.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
 \begin{block}{Преимущества реляционной модели данных}
 \begin{itemize}
 \item теоретическая основа. Формально определяет базовые понятия
